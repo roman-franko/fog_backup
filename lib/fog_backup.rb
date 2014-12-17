@@ -15,14 +15,15 @@ module FogBackup
 
   def self.download_from_ftp(remote_dir)
     host = FogBackup.config['ftp']['host']
-    password = FogBackup.config['ftp']['password']
     username = FogBackup.config['ftp']['username']
-    Net::SFTP.start(host, username, password: password) do |sftp|
-      sftp.download!(remote_dir, FogBackup.root.join('tmp').to_s)
-    end
+    password = FogBackup.config['ftp']['password']
+    tmp_dir = FogBackup.config['options']['tmp_dir'] || FogBackup.root.join('tmp').to_s
+
+    ftp = FtpSync.new host, username, password
+    ftp.pull_dir tmp_dir, remote_dir
   end
 end
 
 # FogBackup.upload_to_aws('spec')
 
-FogBackup.download_from_ftp('sites/all/themes/bartik/templates/')
+# FogBackup.download_from_ftp('/pub/mozilla.org/OJI/')

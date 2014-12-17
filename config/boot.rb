@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'pathname'
 require 's3_uploader'
-require 'net/sftp'
+require 'ftp_sync'
 
 module FogBackup
 

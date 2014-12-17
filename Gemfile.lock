@@ -63,6 +63,8 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    ftp_sync (0.4.3)
+      net-ftp-list (>= 2.1.1)
     inflecto (0.0.2)
     ipaddress (0.8.0)
     json (1.8.1)
@@ -70,9 +72,8 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.1)
     multi_json (1.10.1)
+    net-ftp-list (3.2.8)
     net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
-    net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     nokogiri (1.6.5)
@@ -111,7 +112,7 @@ PLATFORMS
 
 DEPENDENCIES
   fog (~> 1.25)
-  net-sftp
+  ftp_sync
   pry
   rspec
   s3_uploader
