@@ -1,0 +1,13 @@
+ftp:
+  host:
+  username:
+  password:
+
+aws:
+  bucket_name:
+  s3_key:
+  s3_secret:
+  region:
+
+options:
+  threads: 1

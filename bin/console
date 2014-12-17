@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'pry'
+
+$root_dir = ENV['APP_ROOT'] || '../..'
+require File.join(File.expand_path($root_dir, __FILE__), 'config/boot.rb')
+binding.pry
