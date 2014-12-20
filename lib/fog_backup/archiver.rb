@@ -16,14 +16,6 @@ module FogBackup
         result = `#{cmd}`.chomp
         fail ArchivingError, result if $? != 0
       end
-
-      def zip(dir, target, archive_name)
-        source = File.join(dir, archive_name)
-        cmd = "zip -r -9 #{source} #{target} 2>&1"
-        result = `#{cmd}`.chomp
-        fail ArchivingError, result if $? != 0
-      end
-
     end
   end
 end
