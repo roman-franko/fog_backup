@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'fog', '~>1.25'
 gem 's3_uploader'
 gem 'ftp_sync'
+gem 'pony'
 
 group :development, :test do
   gem 'rspec'

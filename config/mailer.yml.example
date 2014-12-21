@@ -1,0 +1,9 @@
+from: 'you@example.com'
+to: 'you@example.com'
+via_options:
+  address: 'smtp.yourserver.com'
+  port: '25'
+  username: 'user'
+  password: 'password'
+  authentication: plain
+  domain: localhost.localdomain

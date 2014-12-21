@@ -2,6 +2,7 @@ require 'rubygems'
 require 'pathname'
 require 's3_uploader'
 require 'ftp_sync'
+require 'pony'
 
 $LOAD_PATH.push File.expand_path('../../lib', __FILE__)
 
