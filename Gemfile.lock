@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:roman-franko/s3_uploader.git
+  revision: 1ca2b7f56cccc8c7aeaadd9f1a559bde5ccd5912
+  specs:
+    s3_uploader (0.1.1)
+      fog
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -5,35 +12,43 @@ GEM
     builder (3.2.2)
     coderay (1.1.0)
     diff-lcs (1.2.5)
-    excon (0.42.0)
+    excon (0.42.1)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (1.25.0)
+    fog (1.26.0)
+      fog-atmos
       fog-brightbox (~> 0.4)
-      fog-core (~> 1.25)
+      fog-core (~> 1.27, >= 1.27.1)
+      fog-ecloud
       fog-json
       fog-profitbricks
       fog-radosgw (>= 0.0.2)
       fog-sakuracloud (>= 0.0.4)
       fog-softlayer
+      fog-storm_on_demand
       fog-terremark
       fog-vmfusion
       fog-voxel
       fog-xml (~> 0.1.1)
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
-      opennebula
-    fog-brightbox (0.7.0)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-brightbox (0.7.1)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.25.0)
+    fog-core (1.27.2)
       builder
       excon (~> 0.38)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
+    fog-ecloud (0.0.2)
+      fog-core
+      fog-xml
     fog-json (1.0.0)
       multi_json (~> 1.0)
     fog-profitbricks (0.0.1)
@@ -47,7 +62,10 @@ GEM
     fog-sakuracloud (0.1.1)
       fog-core
       fog-json
-    fog-softlayer (0.3.25)
+    fog-softlayer (0.3.26)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.0)
       fog-core
       fog-json
     fog-terremark (0.0.3)
@@ -67,7 +85,6 @@ GEM
       net-ftp-list (>= 2.1.1)
     inflecto (0.0.2)
     ipaddress (0.8.0)
-    json (1.8.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -80,20 +97,12 @@ GEM
     net-ssh (2.9.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    opennebula (4.10.1)
-      json
-      nokogiri
-      rbvmomi
     pony (1.11)
       mail (>= 2.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rbvmomi (1.8.2)
-      builder
-      nokogiri (>= 1.4.1)
-      trollop
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -106,10 +115,7 @@ GEM
     rspec-mocks (3.1.3)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    s3_uploader (0.1.1)
-      fog
     slop (3.6.0)
-    trollop (2.0)
 
 PLATFORMS
   ruby
@@ -119,4 +125,4 @@ DEPENDENCIES
   pony
   pry
   rspec
-  s3_uploader
+  s3_uploader!
