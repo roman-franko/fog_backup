@@ -1,8 +1,10 @@
 module FogBackup
-  class Archiver
-    class ArchivingError < StandardError; end
 
-    class << self
+  class ArchivingError < StandardError; end
+
+  module Helpers
+
+    module Archiver
 
       def tar(dir, files, file_to_create)
         files_to_archive = [files].flatten

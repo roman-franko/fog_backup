@@ -1,11 +1,10 @@
 require 'spec_helper'
 
-describe FogBackup::Archiver do
+describe FogBackup::Helpers::Archiver do
 
-  let(:archiver) { FogBackup::Archiver }
+  include FogBackup::Helpers::Archiver
 
-  context '.tar' do
-
+  context '#tar' do
     let(:target) { 'test_folder' }
     let(:target_dir) { FogBackup.root.join 'spec', 'fixtures/' }
     let(:archive_name) { FogBackup.root.join 'tmp/', 'archive.tar.gz' }
@@ -13,10 +12,10 @@ describe FogBackup::Archiver do
     context 'succeeded' do
       after(:each) { File.delete(archive_name) if File.exist?(archive_name) }
 
-      it { expect { archiver.tar(target_dir, target, archive_name) }.not_to raise_error }
+      it { expect { tar(target_dir, target, archive_name) }.not_to raise_error }
 
       it 'creates new archive' do
-        archiver.tar(target_dir, target, archive_name)
+        tar(target_dir, target, archive_name)
         expect(File.exist?(archive_name)).to be true
       end
     end
@@ -25,13 +24,13 @@ describe FogBackup::Archiver do
 
       it 'raises exception' do
         expect {
-          archiver.tar('', '', '')
-        }.to raise_error FogBackup::Archiver::ArchivingError
+          tar('', '', '')
+        }.to raise_error FogBackup::ArchivingError
       end
     end
   end
 
-  context '.untar' do
+  context '#untar' do
     let(:target_dir) { FogBackup.root.join 'tmp/' }
     let(:archive_name) { FogBackup.root.join 'spec', 'fixtures/', 'archive.tar.gz' }
 
@@ -41,10 +40,10 @@ describe FogBackup::Archiver do
         FileUtils.rm_rf(directory) if File.directory?(directory)
       end
 
-      it { expect { archiver.untar(target_dir, archive_name) }.not_to raise_error }
+      it { expect { untar(target_dir, archive_name) }.not_to raise_error }
 
       it 'creates new archive' do
-        archiver.untar(target_dir, archive_name)
+        untar(target_dir, archive_name)
         files = File.join target_dir, 'test_folder'
         expect(File.exist?(files)).to be true
       end
@@ -54,8 +53,8 @@ describe FogBackup::Archiver do
 
       it 'raises exception' do
         expect {
-          archiver.untar('', '')
-        }.to raise_error FogBackup::Archiver::ArchivingError
+          untar('', '')
+        }.to raise_error FogBackup::ArchivingError
       end
     end
   end
