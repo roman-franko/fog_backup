@@ -2,6 +2,7 @@ ftp:
   host:
   username:
   password:
+  target_dir:
 
 aws:
   bucket_name:
@@ -10,3 +11,4 @@ aws:
   region:
 
 options:
+  tmp_dir:
