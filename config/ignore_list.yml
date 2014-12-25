@@ -1,0 +1,11 @@
+# specify array of files (yml)
+-
+  log/*
+-
+  /*.sit.hqx
+-
+  ctools/**/*.*
+-
+  backup_migrate
+-
+  error_log

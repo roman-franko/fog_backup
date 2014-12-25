@@ -10,7 +10,7 @@ module FogBackup
 
   class << self
 
-    attr_accessor :config
+    attr_accessor :config, :ignore_list
 
     def root
       Pathname.new(File.expand_path $root_dir, __FILE__)
