@@ -9,3 +9,7 @@
   backup_migrate
 -
   error_log
+-
+  OJI/
+-
+  data/

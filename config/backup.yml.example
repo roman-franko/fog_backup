@@ -3,6 +3,8 @@ ftp:
   username:
   password:
   target_dir:
+  verbose: true
+  passive: true
 
 aws:
   bucket_name:
