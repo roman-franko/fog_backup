@@ -1,4 +1,11 @@
 GIT
+  remote: git@github.com:roman-franko/ftp_sync.git
+  revision: bb8201ae3ab2027110e5c58b32156b71570072fc
+  specs:
+    ftp_sync (0.4.2)
+      net-ftp-list (>= 2.1.1)
+
+GIT
   remote: git@github.com:roman-franko/s3_uploader.git
   revision: 1ca2b7f56cccc8c7aeaadd9f1a559bde5ccd5912
   specs:
@@ -81,8 +88,6 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
-    ftp_sync (0.4.3)
-      net-ftp-list (>= 2.1.1)
     inflecto (0.0.2)
     ipaddress (0.8.0)
     mail (2.6.3)
@@ -121,7 +126,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ftp_sync
+  ftp_sync!
   pony
   pry
   rspec
