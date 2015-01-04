@@ -1,8 +1,8 @@
-# specify array of files (yml)
+# regexp
 
-log/*
-/*.sit.hqx
-ctools/*
+log/
+.sit.hqx
+ctools/
 backup_migrate
 error_log
 OJI/
