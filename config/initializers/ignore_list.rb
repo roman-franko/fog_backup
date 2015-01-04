@@ -1,3 +1,5 @@
 require 'yaml'
 
-FogBackup.ignore_list = YAML.load_file(FogBackup.root.join 'config/ignore_list.yml')
+
+ignore_string = File.read(FogBackup.root.join 'config/ignore_list')
+FogBackup.ignore_list = ignore_string.split(/\s+/)
