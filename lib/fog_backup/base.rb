@@ -12,7 +12,9 @@ module FogBackup
     end
 
     def run
-      download_from_ftp(@local_dir, FogBackup.config['ftp']['target_dir'])
+      target_dir = FogBackup.config['ftp']['target_dir']
+      target_dir = target_dir[-1] == '/' ? target_dir.chop : target_dir
+      download_from_ftp(@local_dir, target_dir)
       tar(@tmp_dir, formatted_time(@timestamp), @archive_path)
       upload_to_aws(@archive_path)
       Pony.mail(
