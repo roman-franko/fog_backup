@@ -17,6 +17,7 @@ GEM
   specs:
     CFPropertyList (2.2.8)
     builder (3.2.2)
+    chronic (0.10.2)
     coderay (1.1.0)
     diff-lcs (1.2.5)
     excon (0.42.1)
@@ -121,6 +122,8 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     slop (3.6.0)
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -131,3 +134,4 @@ DEPENDENCIES
   pry
   rspec
   s3_uploader!
+  whenever
