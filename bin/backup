@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-$root_dir = ENV['APP_ROOT'] || '../..'
+$root_dir = ENV['APP_ROOT'] || './'
 $tmp_dir = ENV['APP_TMP']
-require File.join(File.expand_path($root_dir, __FILE__), 'config/boot.rb')
+require File.join(File.expand_path(File.join('../../', $root_dir), __FILE__), 'config/boot.rb')
 
 backup = FogBackup::Base.new
 backup.run

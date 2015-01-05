@@ -13,15 +13,12 @@ module FogBackup
     attr_accessor :config, :ignore_list
 
     def root
-      Pathname.new(File.expand_path $root_dir, __FILE__)
+      Pathname.new(File.expand_path File.join('../../',$root_dir), __FILE__)
     end
   end
 end
 
 
 Dir["#{FogBackup.root.join('config/initializers')}/*.rb"].sort.each { |f| require f }
-
-require FogBackup.root.join 'lib', 'fog_backup'
-
-
+Dir[FogBackup.root.join("lib/", "**/*.rb")].each { |f| require f }
 

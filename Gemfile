@@ -4,6 +4,7 @@ gem 's3_uploader', git: 'git@github.com:roman-franko/s3_uploader.git'
 gem 'ftp_sync', git: 'git@github.com:roman-franko/ftp_sync.git'
 gem 'pony'
 gem 'whenever', :require => false
+gem 'rake'
 
 group :development, :test do
   gem 'rspec'
